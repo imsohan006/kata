@@ -66,6 +66,12 @@ public class AppTest
 			}
 	    }
 	    
+	    @Test
+	    public void sumWith_gt_1000_Number() throws InvalidNumberException 
+	    {
+	    	Assert.assertEquals(13, strCal.Add("//[;;]1;;1002;;12"));
+	    }
+	    
 
 	    @Test
 	    public void sumWith_Multiple_NegativeNumber() 

@@ -17,10 +17,10 @@ public class StringCalculator {
 		Matcher match = p.matcher(numbers);
 		while(match.find()){
 			int number = Integer.parseInt(numbers.substring(match.start(),match.end()));
-			if(number<0){
+			if(number<0)
 				errorMsg += number+" ";
-			}
-			sum += number;
+			else if(number<=1000)
+				sum += number;
 		}
 		System.out.println(errorMsg);
 		if(errorMsg.equalsIgnoreCase("negatives not allowed : "))
