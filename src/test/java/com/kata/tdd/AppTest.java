@@ -82,4 +82,10 @@ public class AppTest
 				Assert.assertEquals("negatives not allowed : -1 -34 ", e.getMessage());
 			}
 	    }
+	    
+	    @Test
+	    public void yield_count_of_add_method_call() 
+	    {
+	    	Assert.assertEquals(9, strCal.GetCalledCount());
+	    }
 }

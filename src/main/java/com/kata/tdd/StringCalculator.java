@@ -7,8 +7,11 @@ import com.kata.tdd.exception.InvalidNumberException;
 
 public class StringCalculator {
 	
+	public static int no_of_time_add_fun_called = 0;
+	
 	public int Add(String numbers) throws InvalidNumberException {
 		//System.out.println(numbers);
+		no_of_time_add_fun_called += 1;
 		if(numbers==null)
 			return 0;
 		int sum = 0;
@@ -19,7 +22,7 @@ public class StringCalculator {
 			int number = Integer.parseInt(numbers.substring(match.start(),match.end()));
 			if(number<0)
 				errorMsg += number+" ";
-			else if(number<=1000)
+			else if(number<1001)
 				sum += number;
 		}
 		System.out.println(errorMsg);
@@ -27,5 +30,9 @@ public class StringCalculator {
 			return sum;
 		else
 			throw new InvalidNumberException(errorMsg);
+	}
+	
+	public int GetCalledCount(){
+		return no_of_time_add_fun_called;
 	}
 }
