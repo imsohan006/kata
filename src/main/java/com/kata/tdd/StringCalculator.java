@@ -7,6 +7,8 @@ public class StringCalculator {
 	
 	public int Add(String numbers) {
 		//System.out.println(numbers);
+		if(numbers==null)
+			return 0;
 		int sum = 0;
 		Pattern p = Pattern.compile("[0-9]+");
 		Matcher match = p.matcher(numbers);
@@ -16,5 +18,4 @@ public class StringCalculator {
 		}
 		return sum;
 	}
-
 }
